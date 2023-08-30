@@ -1,0 +1,7 @@
+{
+  "name": "test-zeemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
