@@ -1,0 +1,56 @@
+
+.p-absolute {
+    position: absolute;
+}
+
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center auto;
+    align-items: center;
+}
+
+.alert-zone {
+    height: 150px;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: green;
+}
+
+.rotate-0 {
+    transform: rotate(-30deg);
+    transform-origin: bottom left;
+}
+
+.rotate-1 {
+    transform: rotate(-15deg);
+    transform-origin: bottom left;
+}
+
+.rotate-2 {
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+}
+
+.rotate-3 {
+    transform: rotate(15deg);
+    transform-origin: bottom left;
+}
+
+.rotate-4 {
+    transform: rotate(30deg);
+    transform-origin: bottom left;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.rotate-scale-up{animation:rotate-scale-up 0.5s linear both} @keyframes rotate-scale-up{0%{transform:scale(1) rotateZ(0)}50%{transform:scale(2) rotateZ(180deg)}100%{transform:scale(1) rotateZ(360deg)}}
+
+.blur-in-expand{animation:blur-in-expand 0.4s linear both} @keyframes blur-in-expand{0%{transform:scale(0);filter:blur(12px);opacity:0}100%{transform:scale(1);filter:blur(0);opacity:1}}

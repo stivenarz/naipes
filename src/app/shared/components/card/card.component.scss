@@ -1,0 +1,66 @@
+.naipes-content {
+    width: 120px;
+    height: 200px;
+    margin-top: 15%;
+}
+.naipes-card {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.card-value-position {
+    display: flex;
+    justify-content: start;
+    height: 25%;
+}
+
+.card-value {
+    font-size: 30px;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    top: 0;
+    left: 0;
+    padding-left: 5px;
+}
+
+.card-image {
+    height: 50%;
+    padding: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+ion-avatar {
+    width: 100%;
+    height: 100%;
+}
+
+.icon{
+    width: 20px;
+}
+.corazon {
+    color: red;
+}
+
+.diamante {
+    color: red;
+}
+
+.picas {
+    color: black;
+}
+
+.trebol {
+    color: black;
+}

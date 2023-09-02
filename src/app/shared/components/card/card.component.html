@@ -1,0 +1,23 @@
+<div class="naipes-content">
+  <div class="naipes-card">
+
+    <div class="card-value-position {{card.image}} ">
+      <div class="card-value">
+        {{card.value? card.value : '?'}}
+        <img class="icon" src="{{card.image? '../../assets/img/'+card.image+'.png' : '?'}}">
+      </div>
+    </div>
+  
+        <div class="card-image">
+          <img [src]="card.image? '../../assets/img/'+card.image+'.png' : '?'" />
+        </div>
+  
+    <div class="card-value-position rotate {{card.image}} ">
+      <div class="card-value">
+        {{card.value? card.value : '?'}}
+        <img class="icon" src="{{card.image? '../../assets/img/'+card.image+'.png' : '?'}}">
+      </div>
+    </div>
+
+  </div>
+</div>
