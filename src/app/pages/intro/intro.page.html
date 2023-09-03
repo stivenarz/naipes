@@ -1,9 +1,12 @@
 
 <ion-content [fullscreen]="true">
 
-    <ion-grid>
+    <ion-grid class="ion-padding-top">
       <ion-row>
-        <ion-col size="6" *ngFor="let card of cards" class="rotate-scale-down">
+        <ion-col size="12" class="d-flex-center">
+          <h1>Loading...</h1>
+        </ion-col>
+        <ion-col size="6" *ngFor="let card of cards" class="rotate-scale-down d-flex-center">
           <CardComponent [card]="card"/>
         </ion-col>
       </ion-row>

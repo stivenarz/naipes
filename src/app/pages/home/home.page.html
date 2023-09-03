@@ -1,49 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title *ngIf="cards.length == 0">Naipes | ionic v7</ion-title>
-    <ion-button
-      (click)="setOption(null)"
-      fill="clear"
-      shape="round"
-      *ngIf="cards.length > 0"
-    >
-      <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
-      Back
-    </ion-button>
+    <ion-title >Naipes | ionic v7</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content mode="ios">
   <ion-grid class="h-full center ion-padding">
     <ion-row>
-
-      <!-- ALERT CONGRATULATIONS -->
-      <ion-grid *ngIf="alerts">
-        <ion-row>
-          <ion-col class="ion-text-center ion-padding alert-zone" size="12">
-            <div class="rotate-scale-up" *ngFor="let alert of alerts">
-              {{alert}}
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-      <!-- CARDS VIEW -->
-      <ion-col size="12" *ngIf="cards.length > 0">
-        <div
-          *ngFor="let singleCard of cards ; let index = index"
-          class="center blur-in-expand"
-        >
-          <div
-            class="{{cards.length > 1 ? 'rotate-'+ index : '' }} p-absolute "
-          >
-            <CardComponent [card]="singleCard" />
-          </div>
-        </div>
-      </ion-col>
-
       <!-- START - OPTIONS BUTTON -->
-      <ion-col size="12" *ngIf="cards.length == 0">
+      <ion-col size="12">
         <div class="center">
           <div>
             <ion-button (click)="setOption(1)" class="center ion-padding">
@@ -61,16 +26,4 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer *ngIf="cards.length > 0">
-  <ion-toolbar>
-    <ion-button
-      (click)="setOption(option)"
-      expand="block"
-      fill="clear"
-      shape="round"
-    >
-      <ion-icon slot="start" name="reload-outline"></ion-icon>
-      Reload
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
+

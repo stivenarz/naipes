@@ -8,13 +8,13 @@ import { ICard } from 'src/app/shared/interfaces/card.Interface';
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage {
 
   constructor(
     private router: Router, private naipeService: NaipesService
-    ) { }
+  ) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     /** Invoco la funcion de animacion para el intro */
     this.animation();
   }
@@ -29,13 +29,16 @@ export class IntroPage implements OnInit {
    * @returns {void}
    */
   animation(): void {
+    this.cards = [];
     for (let index = 1; index < 8; index++) {
 
       setTimeout(() => {
         if (index == 1) {
           this.cards.push(...this.naipeService.getCards(1))
         } else if (index == 7) {
-          this.router.navigateByUrl('/home')
+          setTimeout(() => {
+            this.router.navigateByUrl('/home')
+          }, 500);
         } else {
           this.cards.push(...this.naipeService.getCards(1))
         }
