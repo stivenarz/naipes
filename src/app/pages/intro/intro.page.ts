@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NaipesService } from 'src/app/services/naipes.service';
 import { ICard } from 'src/app/shared/interfaces/card.Interface';
+import { NavController } from '@ionic/angular'
 
 @Component({
   selector: 'app-intro',
@@ -11,15 +12,23 @@ import { ICard } from 'src/app/shared/interfaces/card.Interface';
 export class IntroPage {
 
   constructor(
-    private router: Router, private naipeService: NaipesService
+    private router: Router, private naipeService: NaipesService, private navCtrl: NavController
   ) { }
 
+  /**
+   * Invoco la funcion de animacion para el intro cada vez que la pagina es renderizada
+   */
   ionViewWillEnter() {
-    this.cards = [];
     setTimeout(() => {
-      /** Invoco la funcion de animacion para el intro */
       this.animation();
     }, 10);
+  }
+
+  /**
+   * Limpia el array cards cuando la pagina es destruida
+   */
+  ngOnDestroy() {
+    this.cards = []
   }
 
   /** Declaro el array de cartas para renderizar */
@@ -37,7 +46,7 @@ export class IntroPage {
           this.cards.push(...this.naipeService.getCards(1))
         } else if (index == 7) {
           setTimeout(() => {
-            this.router.navigateByUrl('/home')
+            this.navCtrl.navigateRoot('/home')
           }, 500);
         } else {
           this.cards.push(...this.naipeService.getCards(1))
