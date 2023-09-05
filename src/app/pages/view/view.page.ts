@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedCardService } from '../../services/shared-card.service'
 import { ICard } from 'src/app/shared/interfaces/card.Interface';
 import { NaipesService } from 'src/app/services/naipes.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-view',
@@ -13,20 +14,24 @@ export class ViewPage implements OnInit {
 
   constructor(private sharedCardService: SharedCardService, private naipeService: NaipesService, private router: Router) { }
 
+  ngOnDestroy(){
+    this.cardSubscription.unsubscribe();
+  }
+
   ngOnInit() {
-    this.sharedCardService.option$.subscribe((value)=>{
+    this.cardSubscription = this.sharedCardService.option$.subscribe((value)=>{
       this.setOption(value)
     })
   }
 
   ionViewWillEnter(){
+    setTimeout(() => {
     if (this.cards.length === 0) {
-      this.router.navigateByUrl('/home')
-    }
+        this.router.navigateByUrl('/home')
+      }
+    }, 50);
   }
 
-  /** Obtengo las 52 cartas */
-  naipes = this.naipeService.Naipes();
   /** Variable para almacenar las tarjetas que se van a renderizar */
   cards: Array<ICard> = [];
   /** Variable para almacenar la opcion de cartas seleccionada */
@@ -35,6 +40,8 @@ export class ViewPage implements OnInit {
   alerts: any = [];
   /** Variable para inicializar el temporizador para quitar las alertas */
   clearTime: any = null;
+  /** Variable para setear la suscripcion del seteo de opcion en la vista home */
+  private cardSubscription: Subscription = new Subscription;
 
   /**
    * Setea la variable option con la seleccion de despacho de cartas (1 o 5) y setea la variable cards 
@@ -42,13 +49,12 @@ export class ViewPage implements OnInit {
    * @returns {void}
    */
   setOption(option: any): void {
-    this.option = option;
     this.cards = [];
-
-    this.cards = [...this.naipeService.getCards(option)]
-
-    this.setAlerts()
-
+    setTimeout(() => {
+      this.option = option;
+      this.cards = [...this.naipeService.getCards(option)]
+      this.setAlerts()
+    }, 10);
   }
 
   /**

@@ -1,5 +1,5 @@
 import { SharedCardService } from './../../services/shared-card.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router'
 
 @Component({
@@ -7,17 +7,11 @@ import { Router } from '@angular/router'
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
   constructor(
     private sharedCardService: SharedCardService, private router: Router
   ) { }
-
-  ngOnInit() {
-    this.sharedCardService.option$.subscribe((value)=>{
-      this.option = value
-    })
-  }
 
   /** Variable para almacenar la opcion de cartas seleccionada */
   option: any = null;
