@@ -5,12 +5,10 @@
 </ion-header>
 
 <ion-content mode="ios">
-  <ion-grid class="h-full center ion-padding">
-    <ion-row>
+  <ion-grid class="center glassed ion-padding glass-content">
       <!-- START - OPTIONS BUTTON -->
-      <ion-col size="12">
-        <div class="center">
-          <div>
+      <ion-col size="12" class="center">
+        <div>
             <ion-button (click)="setOption(1)" class="center ion-padding">
               <ion-icon slot="start" name="magnet-outline"></ion-icon>
               Get 1 Card
@@ -19,10 +17,8 @@
               <ion-icon slot="start" name="magnet-outline"></ion-icon>
               Get 5 Cards
             </ion-button>
-          </div>
         </div>
       </ion-col>
-    </ion-row>
   </ion-grid>
 </ion-content>
 

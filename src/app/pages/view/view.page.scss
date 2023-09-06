@@ -6,12 +6,22 @@
 .center {
     display: flex;
     flex-direction: column;
-    justify-content: center auto;
+    justify-content: center;
     align-items: center;
 }
 
+.h-head {
+    min-height: 10%;
+}
+.h-body {
+    height: 90%;
+}
+.h-full {
+    height: 100%;
+}
+
 .alert-zone {
-    height: 150px;
+    min-height: 100%;
     font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: green;

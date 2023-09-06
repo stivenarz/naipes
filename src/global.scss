@@ -25,12 +25,19 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+ion-toolbar {
+    --background: url(/assets/background/valle.jpg);
+    backdrop-filter: blur(25px);
+}
 ion-content {
-    width: 100vw;
-    height: 100vh;
+    --ion-background-color: url(/assets/background/valle.jpg);
 }
 .d-flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.glassed  {
+    backdrop-filter: blur(25px);
+    min-height: 100%;
 }

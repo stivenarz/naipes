@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ICard } from '../shared/interfaces/card.Interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class NaipesService {
     this.getNaipes()
   }
 
-  private naipes: any = [];
+  private naipes: Array<ICard> = [];
 
   Naipes() {
     return this.naipes
